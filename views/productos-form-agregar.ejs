@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>¿Es Vegano? - Directorio de productos</title>
+    <%- include('includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('includes/header.ejs') %>
+
+
+ 
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Agregar Producto</h1>
+        <form action="/productos/agregar" method="post">
+            <!-- Nombre del producto -->
+            <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreProducto" maxlength="250" placeholder="Introduce el nombre del producto">
+                <div class="form-text">Máximo 250 caracteres.</div>
+            </div>
+
+            <!-- Categoría -->
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoría</label>
+                <select class="form-select" id="categoria">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Alimentos">Alimentos</option>
+                    <option value="Cuidado Personal">Cuidado Personal</option>
+                    <option value="Maquillaje">Maquillaje</option>
+                    <option value="Aseo">Aseo</option>
+                    <option value="Ropa y Accesorios">Ropa y Accesorios</option>
+                </select>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="4" maxlength="250" placeholder="Escribe una descripción del producto"></textarea>
+                <div class="form-text">Máximo 250 palabras.</div>
+            </div>
+
+            <!-- Ingredientes -->
+            <div class="mb-3">
+                <label for="ingredientes" class="form-label">Ingredientes</label>
+                <textarea class="form-control" id="ingredientes" rows="5" placeholder="Lista de ingredientes"></textarea>
+            </div>
+
+            <!-- Foto(s) -->
+            <div class="mb-3">
+                <label for="fotos" class="form-label">Foto(s) del producto</label>
+                <input type="file" class="form-control" id="fotos" multiple>
+            </div>
+
+            <!-- Clasificación -->
+            <div class="mb-3">
+                <label class="form-label">Clasificación</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="clasificacion" id="apto" value="apto">
+                    <label class="form-check-label" for="apto">Apto</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="clasificacion" id="noApto" value="noApto">
+                    <label class="form-check-label" for="noApto">No Apto</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="clasificacion" id="faltaInfo" value="faltaInfo">
+                    <label class="form-check-label" for="faltaInfo">Falta información</label>
+                </div>
+            </div>
+
+            <!-- Enlaces externos -->
+            <div class="mb-3">
+                <label class="form-label">Enlaces externos</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Título enlace</span>
+                    <input type="text" class="form-control" placeholder="Introduce el título del enlace">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">URL enlace</span>
+                    <input type="url" class="form-control" placeholder="Introduce la URL">
+                </div>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary border-inner py-3 px-5">Enviar Producto</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Service Start -->
+    <div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+                        <h4 class="text-uppercase mb-3">Birthday Cake</h4>
+                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
+                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+                        <h4 class="text-uppercase mb-3">Wedding Cake</h4>
+                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
+                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+                        <h4 class="text-uppercase mb-3">Custom Cake</h4>
+                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
+                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service Start -->
+
+
+
+    
+    <%- include('includes/footer.ejs') %>
+
+    <%- include('includes/scripts.ejs') %>
+</body>
+
+</html>
