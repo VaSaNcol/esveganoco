@@ -14,18 +14,19 @@
  
     <div class="container mt-5">
         <h1 class="text-center mb-4">Agregar Producto</h1>
+
         <form action="/productos/agregar" method="post">
             <!-- Nombre del producto -->
             <div class="mb-3">
                 <label for="nombreProducto" class="form-label">Nombre del producto</label>
-                <input type="text" class="form-control" id="nombreProducto" maxlength="250" placeholder="Introduce el nombre del producto">
+                <input type="text" class="form-control" id="nombreProducto" name="nombre_producto" maxlength="250" placeholder="Introduce el nombre del producto">
                 <div class="form-text">Máximo 250 caracteres.</div>
             </div>
-
+        
             <!-- Categoría -->
             <div class="mb-3">
                 <label for="categoria" class="form-label">Categoría</label>
-                <select class="form-select" id="categoria">
+                <select class="form-select" id="categoria" name="categoria">
                     <option value="">Selecciona una categoría</option>
                     <option value="Alimentos">Alimentos</option>
                     <option value="Cuidado Personal">Cuidado Personal</option>
@@ -34,26 +35,27 @@
                     <option value="Ropa y Accesorios">Ropa y Accesorios</option>
                 </select>
             </div>
-
+        
             <!-- Descripción -->
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción</label>
-                <textarea class="form-control" id="descripcion" rows="4" maxlength="250" placeholder="Escribe una descripción del producto"></textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="4" maxlength="250" placeholder="Escribe una descripción del producto"></textarea>
                 <div class="form-text">Máximo 250 palabras.</div>
             </div>
-
+        
             <!-- Ingredientes -->
             <div class="mb-3">
                 <label for="ingredientes" class="form-label">Ingredientes</label>
-                <textarea class="form-control" id="ingredientes" rows="5" placeholder="Lista de ingredientes"></textarea>
+                <textarea class="form-control" id="ingredientes" name="ingredientes" rows="5" placeholder="Lista de ingredientes"></textarea>
             </div>
-
+        
             <!-- Foto(s) -->
+            <!-- Nota: Asegúrate de que el formulario tenga el atributo enctype="multipart/form-data" para poder subir archivos -->
             <div class="mb-3">
                 <label for="fotos" class="form-label">Foto(s) del producto</label>
-                <input type="file" class="form-control" id="fotos" multiple>
+                <input type="file" class="form-control" id="fotos" name="fotos" multiple>
             </div>
-
+        
             <!-- Clasificación -->
             <div class="mb-3">
                 <label class="form-label">Clasificación</label>
@@ -70,25 +72,28 @@
                     <label class="form-check-label" for="faltaInfo">Falta información</label>
                 </div>
             </div>
-
+        
             <!-- Enlaces externos -->
             <div class="mb-3">
                 <label class="form-label">Enlaces externos</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Título enlace</span>
-                    <input type="text" class="form-control" placeholder="Introduce el título del enlace">
+                    <input type="text" class="form-control" name="titulo_enlace" placeholder="Introduce el título del enlace">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">URL enlace</span>
-                    <input type="url" class="form-control" placeholder="Introduce la URL">
+                    <input type="url" class="form-control" name="url_enlace" placeholder="Introduce la URL">
                 </div>
             </div>
-
+        
             <!-- Botón de envío -->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary border-inner py-3 px-5">Enviar Producto</button>
             </div>
         </form>
+        
+
+
     </div>
 
 

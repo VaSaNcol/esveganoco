@@ -27,8 +27,8 @@ app.get('/agregar-producto/', (req, res) => {
 const productosRouter = require('./routes/productos-agregar');
 app.use('/productos', productosRouter);
 
-app.get('/productos-agregado', (req, res) => {
-  res.render('producto-agregado'); 
+app.get('/producto-agregado', (req, res) => {
+  res.render('productos-agregado'); 
 });
 
 
