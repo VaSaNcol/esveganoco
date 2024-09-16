@@ -30,7 +30,9 @@ app.use('/productos', productosRouter);
 app.get('/producto-agregado', (req, res) => {
   res.render('productos-agregado'); 
 });
-
+app.get('/contactenos', (req, res) => {
+  res.render('contactenos'); 
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
