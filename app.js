@@ -17,9 +17,11 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.render('index');
 });
-app.get('/listado-de-productos/', (req, res) => {
-  res.render('productos-listar');
-});
+
+// app.get('/listado-de-productos/', (req, res) => {
+//   res.render('productos-listar');
+// });
+
 app.get('/agregar-producto/', (req, res) => {
   res.render('productos-form-agregar');
 });
@@ -33,6 +35,10 @@ app.get('/producto-agregado', (req, res) => {
 app.get('/contactenos', (req, res) => {
   res.render('contactenos'); 
 });
+
+const productosListarRouter = require('./routes/productos-listar');
+app.use('/', productosListarRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

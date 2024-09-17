@@ -23,15 +23,10 @@
             </div>
             <div class="tab-class text-center">
                 <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
-                    <li class="nav-item">
-                        <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Birthday</a>
+                    <li class="nav-item color-primary">
+                        Recientemente agregados
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Wedding</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Custom</a>
-                    </li>
+
                 </ul>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
@@ -268,7 +263,49 @@
     </div>
     <!-- Products End -->
 
+    
 
+    <div class="container-fluid about py-5">
+        <div class="container">
+          <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Listado completo de Productos</h2>
+            <h1 class="display-4 text-uppercase">¿Es Vegano?</h1>
+          </div>
+          <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+              <li class="nav-item color-primary">
+                Recientemente agregados
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-3">
+                  <% productos.forEach(function(producto) { %>
+                    <div class="col-lg-6 col-md-12">
+                      <div class="d-flex h-100">
+                        <div class="flex-shrink-0">
+                          <img class="img-fluid" src="<%= producto.url_imagen || '/img/default.png' %>" alt="<%= producto.nombre_producto %>" style="width: 150px; height: 85px;">
+                          <h4 class="bg-dark text-primary p-2 m-0"><%= producto.categoria %></h4>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                          <h5 class="text-uppercase"><%= producto.nombre_producto %></h5>
+                          <span><%= producto.descripcion %></span>
+                        </div>
+                      </div>
+                    </div>
+                  <% }); %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+
+
+      
 
     <!-- Facts Start -->
     <div class="container-fluid bg-img py-5 mb-5">
@@ -329,18 +366,26 @@
     <div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-12 col-md-6">
+                <div class="col-lg-12 col-md-12">
                     <div class="bg-primary border-inner text-center text-white p-5">
                         <h4 class="text-uppercase mb-3">Que es el Veganismo?</h4>
-                        <p>El veganismo es un estilo de vida y una filosofía que busca evitar la explotación y el maltrato animal en todas sus formas. Las personas que adoptan el veganismo eligen no consumir productos de origen animal, lo que incluye no solo la carne, sino también los lácteos, los huevos, la miel y otros derivados animales. Además, el veganismo va más allá de la alimentación, extendiéndose a la vestimenta, cosméticos y cualquier producto que involucre el uso de animales.
+                        <p>El veganismo es un estilo de vida y una filosofía que busca evitar la explotación y el maltrato animal en todas sus formas. 
+                            <br>Las personas que adoptan el veganismo eligen no consumir productos de origen animal, lo que incluye no solo la carne, sino también los lácteos, los huevos, la miel y otros derivados animales.
+                            <br> 
+                            Además, el veganismo va más allá de la alimentación, extendiéndose a la vestimenta, cosméticos y cualquier producto que involucre el uso de animales.
+                            <br>
 
-                            El veganismo está motivado por varias razones, siendo las principales el respeto por los derechos de los animales, el cuidado del medio ambiente y la preocupación por la salud. Los veganos consideran que todas las formas de vida tienen un valor inherente y promueven alternativas basadas en plantas y en productos que no causan daño a los animales. Esta práctica está en constante crecimiento, y muchas personas eligen el veganismo para llevar una vida más ética, sostenible y saludable.</p>
+                            El veganismo está motivado por el respeto y los derechos de los animales. 
+                            <br>
+                            Los veganos consideran que todas las formas de vida tienen un valor inherente y promueven alternativas basadas en plantas y en productos que no causan daño a los animales. 
+                            <br>
+                            Esta práctica está en constante crecimiento, y muchas personas eligen el veganismo para llevar una vida más ética.</p>
                         <!-- <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a> -->
                     </div>
                 </div>
 
                 </div>
-                <div class="col-lg-12 col-md-6 text-center">
+                <div class="col-lg-12 col-md-12 text-center">
                     <h1 class="text-uppercase text-light mb-4">Por los animales, haste vegano!</h1>
                     <!-- <a href="" class="btn btn-primary border-inner py-3 px-5">Order Now</a> -->
                 </div>
