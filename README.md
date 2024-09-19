@@ -68,4 +68,8 @@ Los usuarios también podrán sugerir cambios, enviar imágenes, o actualizar cu
 
 ## Diagrama de Secuencias / Casos de Uso
 
-![Diagrama DB](https://i.imgur.com/l3HsgLp.png)
+![Diagrama DB](https://i.imgur.com/ZAyh30e.png)
+
+## Diagrama de Despliegue
+
+![Diagrama DB](https://i.imgur.com/OYRRniK.png)
