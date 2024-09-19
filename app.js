@@ -37,12 +37,11 @@ app.get("/contactenos", (req, res) => {
   res.render("contactenos-form");
 });
 
-app.get("/contactar", (req, res) => {
+app.post("/contactar", (req, res) => {
  
   const { nombre, correo, telefono, mensaje } = req.body;
-  // formatear la fecha correctamente
-  const fechaformateada = new DATE(fecha).toISOString().slice(0, 10);
-  const query = `INSERT INTO contacto (nombre, correo, telefono, mensaje) VALUES (?,?,?,?)`;
+  // formatear la fecha correctamentes
+  const query = `INSERT INTO contactos (nombre, correo, telefono, mensaje) VALUES (?,?,?,?)`;
   connection.query(
     query,
     [nombre, correo, telefono, mensaje],
@@ -59,7 +58,7 @@ app.get("/contactar", (req, res) => {
 });
 
 const productosListarRouter = require("./routes/productos-listar");
-const connection = require("./db");
+// const connection = require("./db");
 app.use("/", productosListarRouter);
 
 app.listen(port, () => {
